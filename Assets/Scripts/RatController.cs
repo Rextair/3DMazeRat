@@ -18,8 +18,9 @@ public class RatController : MonoBehaviour
     public int maxSpawnCount = 3; 
     private int currentSpawnCount = -1; 
     [SerializeField] GameObject spawnedObjectPrefab; 
-
-    private int selectedGun;
+    public Transform finishObject; 
+    public Transform pointerObject; 
+   
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -33,6 +34,8 @@ public class RatController : MonoBehaviour
         Movement();
         CursorSettings();
         ObjectSpawning();
+         Vector3 direction = finishObject.position - pointerObject.position;
+    pointerObject.rotation = Quaternion.LookRotation(direction);
     }
     void LateUpdate()
     {

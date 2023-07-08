@@ -6,7 +6,7 @@ public class RatController : MonoBehaviour
 {
    
     public Transform viewPoint;
-    public float mouseSensitivity = 1f;
+    public float mouseSensitivity = 25f;
     private float verticalRotStore;
     private Vector2 mouseInput;
     public bool invertLook;
@@ -50,7 +50,7 @@ public class RatController : MonoBehaviour
     void Movement()
     {
         moveDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetButton("Fire3"))
         {
             activateMoveSpeed = runSpeed;
         }
@@ -71,12 +71,12 @@ public class RatController : MonoBehaviour
     }
     void Rotation()
     {
-        mouseInput = new Vector2(Input.GetAxisRaw("Mouse X"), 0);
+        mouseInput = new Vector2(Input.GetAxis("Mouse X") * mouseSensitivity, 0);
 
         transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y + mouseInput.x,
         transform.rotation.eulerAngles.z);
 
-        verticalRotStore += mouseInput.y; verticalRotStore = Mathf.Clamp(verticalRotStore, -60f, 60f);
+        verticalRotStore += verticalRotStore = Mathf.Clamp(verticalRotStore, -60f, 60f);
         if (invertLook)
         {
             viewPoint.transform.rotation = Quaternion.Euler(verticalRotStore,

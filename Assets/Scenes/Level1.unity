@@ -6067,6 +6067,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 70360551539067128, guid: 3089d9ad07183b0418bfb47d33dabf3a, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 70360551539067128, guid: 3089d9ad07183b0418bfb47d33dabf3a, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 70360551539067128, guid: 3089d9ad07183b0418bfb47d33dabf3a, type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 70360551539067130, guid: 3089d9ad07183b0418bfb47d33dabf3a, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -6118,6 +6130,10 @@ PrefabInstance:
     - target: {fileID: 70360551539067133, guid: 3089d9ad07183b0418bfb47d33dabf3a, type: 3}
       propertyPath: m_Name
       value: Rat(Player)
+      objectReference: {fileID: 0}
+    - target: {fileID: 70360551539067134, guid: 3089d9ad07183b0418bfb47d33dabf3a, type: 3}
+      propertyPath: mouseSensitivity
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 70360551539067135, guid: 3089d9ad07183b0418bfb47d33dabf3a, type: 3}
       propertyPath: m_Radius

@@ -71,7 +71,7 @@ public class RatController : MonoBehaviour
     }
     void Rotation()
     {
-        mouseInput = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y") * mouseSensitivity);
+        mouseInput = new Vector2(Input.GetAxisRaw("Mouse X"), 0);
 
         transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y + mouseInput.x,
         transform.rotation.eulerAngles.z);

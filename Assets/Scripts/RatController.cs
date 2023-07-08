@@ -40,6 +40,7 @@ public class RatController : MonoBehaviour
     void LateUpdate()
     {
         cam.transform.position = viewPoint.position;
+        cam.transform.position = new Vector3(cam.transform.position.x, cam. transform.position.y + Mathf.Sin(Time.time*(activateMoveSpeed*2.5f)) * (0.1f*(Input.GetAxis("Horizontal")-Input.GetAxis("Vertical"))), cam.transform.position.z);
         cam.transform.rotation = viewPoint.rotation;
     }
     void CursorSettings()
@@ -59,6 +60,7 @@ public class RatController : MonoBehaviour
     void Movement()
     {
         moveDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
+        Debug.Log(Input.GetAxisRaw("Horizontal")-Input.GetAxisRaw("Vertical"));
         if (Input.GetButton("Fire3"))
         {
             activateMoveSpeed = runSpeed;
@@ -99,7 +101,7 @@ public class RatController : MonoBehaviour
     }
     private void ObjectSpawning()
     {
-       if (Input.GetKeyDown(KeyCode.Space))
+       if (Input.GetButtonDown("Jump"))
         {
             currentSpawnCount++;
             if (currentSpawnCount < maxSpawnCount)

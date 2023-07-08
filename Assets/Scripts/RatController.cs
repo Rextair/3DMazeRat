@@ -15,7 +15,9 @@ public class RatController : MonoBehaviour
     private Vector3 moveDir, movement;
     public CharacterController charCon;
     private Camera cam;
-    public Transform target;
+    public int maxSpawnCount = 3; 
+    private int currentSpawnCount = -1; 
+    [SerializeField] GameObject spawnedObjectPrefab; 
 
     private int selectedGun;
     void Start()
@@ -30,7 +32,7 @@ public class RatController : MonoBehaviour
         Rotation();
         Movement();
         CursorSettings();
-        PathBlocking();
+        ObjectSpawning();
     }
     void LateUpdate()
     {
@@ -92,8 +94,22 @@ public class RatController : MonoBehaviour
             viewPoint.transform.rotation.eulerAngles.y, viewPoint.transform.rotation.eulerAngles.z);
         }
     }
-    void PathBlocking()
+    private void ObjectSpawning()
     {
-       
+       if (Input.GetKeyDown(KeyCode.Space))
+        {
+            currentSpawnCount++;
+            if (currentSpawnCount < maxSpawnCount)
+            {
+                SpawnObject();
+            }
+        }
+    }
+
+    private void SpawnObject()
+    {
+        GameObject spawnedObject = Instantiate(spawnedObjectPrefab, transform.position, Quaternion.identity);
+        Destroy(spawnedObject, 10f); 
     }
 }
+

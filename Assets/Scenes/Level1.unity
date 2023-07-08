@@ -3278,7 +3278,6 @@ MonoBehaviour:
   finish: {fileID: 148519483}
   isGameRunning: 1
   IsBotAtFinish: 0
-  IsBotCornered: 0
   IsBotDetained: 0
 --- !u!4 &421153822
 Transform:
@@ -7206,9 +7205,17 @@ PrefabInstance:
       value: Rat(Player)
       objectReference: {fileID: 0}
     - target: {fileID: 70360551539067134, guid: 3089d9ad07183b0418bfb47d33dabf3a, type: 3}
+      propertyPath: spawnedObject
+      value: 
+      objectReference: {fileID: 7489453529573117393, guid: 0994cb9d0a00f4e429988c7af771643f, type: 3}
+    - target: {fileID: 70360551539067134, guid: 3089d9ad07183b0418bfb47d33dabf3a, type: 3}
       propertyPath: mouseSensitivity
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 70360551539067134, guid: 3089d9ad07183b0418bfb47d33dabf3a, type: 3}
+      propertyPath: spawnedObjectPrefab
+      value: 
+      objectReference: {fileID: 7489453529573117393, guid: 0994cb9d0a00f4e429988c7af771643f, type: 3}
     - target: {fileID: 70360551539067135, guid: 3089d9ad07183b0418bfb47d33dabf3a, type: 3}
       propertyPath: m_Radius
       value: 0.32
@@ -10692,7 +10699,7 @@ GameObject:
   - component: {fileID: 1607211237}
   m_Layer: 0
   m_Name: Bot
-  m_TagString: Untagged
+  m_TagString: Bot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

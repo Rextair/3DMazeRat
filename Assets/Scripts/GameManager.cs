@@ -13,7 +13,6 @@ public class GameManager : MonoBehaviour
 
     public bool isGameRunning = true; 
     public bool IsBotAtFinish = false;
-    public bool IsBotCornered = false;
     public bool IsBotDetained = false;
 
     private void Awake() {
@@ -28,7 +27,7 @@ public class GameManager : MonoBehaviour
             {
                 BotWins();
             }
-            else if (IsBotCornered || IsBotDetained)
+            else if (IsBotDetained)
             {
                 MouseWins();
             }

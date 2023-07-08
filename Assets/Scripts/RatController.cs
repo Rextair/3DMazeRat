@@ -15,18 +15,22 @@ public class RatController : MonoBehaviour
     private Vector3 moveDir, movement;
     public CharacterController charCon;
     private Camera cam;
+    public Transform target;
 
     private int selectedGun;
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         cam = Camera.main;
+        Transform newTrans = SpawnManager.instance.GetRatSpawnPoint();
+        transform.position = newTrans.position; transform.rotation = newTrans.rotation;
     }
     void Update()
     {
         Rotation();
         Movement();
         CursorSettings();
+        PathBlocking();
     }
     void LateUpdate()
     {
@@ -87,5 +91,9 @@ public class RatController : MonoBehaviour
             viewPoint.transform.rotation = Quaternion.Euler(-verticalRotStore,
             viewPoint.transform.rotation.eulerAngles.y, viewPoint.transform.rotation.eulerAngles.z);
         }
+    }
+    void PathBlocking()
+    {
+       
     }
 }

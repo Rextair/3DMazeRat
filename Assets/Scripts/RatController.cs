@@ -11,7 +11,7 @@ public class RatController : MonoBehaviour
     private Vector2 mouseInput;
     public bool invertLook;
     public float moveSpeed = 5f, runSpeed = 8f;
-    private float activateMoveSpeed;
+    public float activateMoveSpeed;
     private Vector3 moveDir, movement;
     public CharacterController charCon;
     private Camera cam;
@@ -27,6 +27,7 @@ public class RatController : MonoBehaviour
         cam = Camera.main;
         Transform newTrans = SpawnManager.instance.GetRatSpawnPoint();
         transform.position = newTrans.position; transform.rotation = newTrans.rotation;
+        
     }
     void Update()
     {
@@ -34,8 +35,8 @@ public class RatController : MonoBehaviour
         Movement();
         CursorSettings();
         ObjectSpawning();
-         Vector3 direction = finishObject.position - pointerObject.position;
-    pointerObject.rotation = Quaternion.LookRotation(direction);
+        Vector3 direction = finishObject.position - pointerObject.position;
+        pointerObject.rotation = Quaternion.LookRotation(direction);
     }
     void LateUpdate()
     {
@@ -60,7 +61,7 @@ public class RatController : MonoBehaviour
     void Movement()
     {
         moveDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
-        Debug.Log(Input.GetAxisRaw("Horizontal")-Input.GetAxisRaw("Vertical"));
+        //Debug.Log(Input.GetAxisRaw("Horizontal")-Input.GetAxisRaw("Vertical"));
         if (Input.GetButton("Fire3"))
         {
             activateMoveSpeed = runSpeed;

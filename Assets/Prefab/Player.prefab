@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 70360551539067128}
   - component: {fileID: 70360551539067135}
   - component: {fileID: 70360551539067134}
+  - component: {fileID: 8983290694617436694}
   m_Layer: 0
-  m_Name: Rat(Player)
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,6 +125,26 @@ MonoBehaviour:
   spawnedObjectPrefab: {fileID: 0}
   finishObject: {fileID: 0}
   pointerObject: {fileID: 6686873720048077205}
+  ArmAnimator: {fileID: 0}
+--- !u!95 &8983290694617436694
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70360551539067133}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7dba09b48f1fa4847a3bc19fdd19b0c7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &70360552890731855
 GameObject:
   m_ObjectHideFlags: 0

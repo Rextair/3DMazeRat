@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class SpriteLooksIntoPlayerScript : MonoBehaviour
 {
-    public GameObject Player;
-    private Transform target;
+    Vector3 cameraDir;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,11 +14,9 @@ public class SpriteLooksIntoPlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Look at player verticle and horizontaly
-        transform.LookAt(target);
+        cameraDir = Camera.main.transform.forward;
+        cameraDir.y = 0;
 
-        //Look at player only horizontaly
-        //Vector3 modifiedTarget = target.position;
-
+        transform.rotation = Quaternion.LookRotation(cameraDir);
     }
 }

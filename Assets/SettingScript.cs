@@ -11,6 +11,8 @@ public class SettingScript : MonoBehaviour
     public Slider VolumeValue;
     public Slider SensetivityValue;
 
+    
+
     public AudioMixer audioMixer;
     // Start is called before the first frame update
     void Start()
@@ -52,7 +54,7 @@ public class SettingScript : MonoBehaviour
 
     public void SetSensevity(float sense)
     {
-
+        //rC.sensetivity = sense;
     }
 
     public void saveSettings()

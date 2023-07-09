@@ -60,6 +60,7 @@ public class MenuScript : MonoBehaviour
         MainMenuGameObject.SetActive(true);
         StartMenuGameObject.SetActive(false);
         SettingsMenuGameObject.SetActive(false);
+        ManualGameObject.SetActive(false);
     }
 
     public void ShowStartMenu()
@@ -107,7 +108,7 @@ public class MenuScript : MonoBehaviour
     {
         if(MenuNumber == 0)
         {
-            MenuNumber = 1;
+            MenuNumber = 3;
             AudioClick.Play();
         }
     }

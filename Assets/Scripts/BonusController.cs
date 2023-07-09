@@ -8,8 +8,8 @@ public class BonusController : MonoBehaviour
     void Start()
     {
         ratController = FindObjectOfType<RatController>();
-        Transform bonusSpawnPoint = FindObjectOfType<SpawnManager>().GetBonusSpawnPoint();
-        transform.position = bonusSpawnPoint.position; transform.rotation = bonusSpawnPoint.rotation;
+        // Transform bonusSpawnPoint = FindObjectOfType<SpawnManager>().GetBonusSpawnPoint();
+        // transform.position = bonusSpawnPoint.position; transform.rotation = bonusSpawnPoint.rotation;
     }
     private void OnTriggerEnter(Collider target) {
         if(target.gameObject.CompareTag("Player"))

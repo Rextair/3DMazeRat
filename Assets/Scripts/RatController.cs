@@ -18,11 +18,13 @@ public class RatController : MonoBehaviour
     public int maxSpawnCount = 3; 
     private int currentSpawnCount = -1; 
     [SerializeField] GameObject spawnedObjectPrefab; 
+    [SerializeField] AudioSource audioSource;
     public Transform finishObject; 
     public Transform pointerObject; 
    
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         Cursor.lockState = CursorLockMode.Locked;
         cam = Camera.main;
         Transform newTrans = SpawnManager.instance.GetRatSpawnPoint();
@@ -114,6 +116,7 @@ public class RatController : MonoBehaviour
 
     private void SpawnObject()
     {
+        audioSource.Play();
         GameObject spawnedObject = Instantiate(spawnedObjectPrefab, transform.position, Quaternion.identity);
         Destroy(spawnedObject, 10f); 
     }

@@ -17,7 +17,7 @@ public class ArmLRatAnimationScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(rC.charCon.velocity.magnitude);
+//        Debug.Log(rC.charCon.velocity.magnitude);
         ArmAnimator.SetFloat("Speed", rC.charCon.velocity.magnitude);
     }
 }

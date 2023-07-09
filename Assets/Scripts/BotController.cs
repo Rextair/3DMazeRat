@@ -24,6 +24,14 @@ public class BotController : MonoBehaviour
     private void Update()
     {
         UpdateDestination();
+        if(GameManager.instance.isGameRunning)
+        {
+            if(agent.remainingDistance <= agent.stoppingDistance && !agent.pathPending)
+        {
+            GameManager.instance.IsBotAtFinish = true;
+        }
+        }
+        
     }
 
     private void UpdateDestination()

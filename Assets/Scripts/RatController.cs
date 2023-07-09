@@ -25,15 +25,15 @@ public class RatController : MonoBehaviour
     
     [SerializeField] GameObject spawnedObjectPrefab; 
     AudioSource audioSource;
-    
-    public Transform finishObject; 
-    public Transform pointerObject;
+    public GameObject finishObject; 
+    public Transform pointerObject; 
    
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
         Cursor.lockState = CursorLockMode.Locked;
         cam = Camera.main;
+        finishObject = GameObject.FindGameObjectWithTag("Fridge");
         // Transform newTrans = SpawnManager.instance.GetRatSpawnPoint();
         // transform.position = newTrans.position; transform.rotation = newTrans.rotation;
         
@@ -45,7 +45,7 @@ public class RatController : MonoBehaviour
         Movement();
         CursorSettings();
         ObjectSpawning();
-        Vector3 direction = finishObject.position - pointerObject.position;
+        Vector3 direction = finishObject.transform.position - pointerObject.position;
         pointerObject.rotation = Quaternion.LookRotation(direction);
     }
     void LateUpdate()

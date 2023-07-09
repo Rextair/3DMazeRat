@@ -5,12 +5,13 @@ using UnityEngine;
 public class ArmLRatAnimationScript : MonoBehaviour
 {
 
-    private Animator ArmAnimator;
+    public Animator ArmLAnimator;
     RatController rC;
     // Start is called before the first frame update
     void Start()
     {
-        ArmAnimator = FindObjectOfType<Animator>();
+        //ArmLAnimator = FindObjectOfType<Animator>();
+        Debug.Log("ArmL: "+ArmLAnimator);
         rC = FindObjectOfType<RatController>();
     }
 
@@ -18,6 +19,6 @@ public class ArmLRatAnimationScript : MonoBehaviour
     void Update()
     {
 //        Debug.Log(rC.charCon.velocity.magnitude);
-        ArmAnimator.SetFloat("Speed", rC.charCon.velocity.magnitude);
+        ArmLAnimator.SetFloat("Speed", rC.charCon.velocity.magnitude);
     }
 }

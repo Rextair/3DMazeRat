@@ -7,6 +7,7 @@ public class SpawnManager : MonoBehaviour
     public static SpawnManager instance;
     public Transform[] fridgeSpawnPoints;
     public Transform[] botSpawnPoints;
+    public Transform[] bonusSpawnPoints;
     private void Awake() 
     {
         instance = this;
@@ -22,6 +23,10 @@ public class SpawnManager : MonoBehaviour
         {
             spawns.gameObject.SetActive(false);
         }
+        foreach(Transform bonus in bonusSpawnPoints)
+        {
+            bonus.gameObject.SetActive(false);
+        }
     }
     public Transform GetFridgeSpawnPoint()
     {
@@ -31,9 +36,13 @@ public class SpawnManager : MonoBehaviour
     {
         return botSpawnPoints[Random.Range(0, botSpawnPoints.Length)];
     }
+    public Transform GetBonusSpawnPoint()
+    {
+        return bonusSpawnPoints[Random.Range(0, bonusSpawnPoints.Length)];
+    }
     public Vector3 GetRatSpawnPoint(Vector3 fridgePosition)
 {
-    Vector3 spawnOffset = new Vector3(0, -.571f, -2f); 
+    Vector3 spawnOffset = new Vector3(0, -.191f, 0f); 
 
     Vector3 spawnPoint = fridgePosition + spawnOffset;
     Quaternion spawnRotation = Quaternion.identity; 

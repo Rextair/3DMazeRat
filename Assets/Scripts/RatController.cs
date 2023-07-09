@@ -22,7 +22,7 @@ public class RatController : MonoBehaviour
     
     public int maxSpawnCount = 3; 
     private int currentSpawnCount = -1; 
-    
+    public int reverseSpawnCount = 3;
     [SerializeField] GameObject spawnedObjectPrefab; 
     private AudioSource breakGlassSound;
     public GameObject finishObject; 
@@ -115,6 +115,8 @@ public class RatController : MonoBehaviour
        if (Input.GetButtonDown("Jump"))
         {
             currentSpawnCount++;
+            reverseSpawnCount--;
+            if(reverseSpawnCount < 1){reverseSpawnCount =0;}
             if (currentSpawnCount < maxSpawnCount)
             {
                 SpawnObject();

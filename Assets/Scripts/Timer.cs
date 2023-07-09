@@ -8,15 +8,15 @@ public class Timer : MonoBehaviour
     public float countdownTime = 30f; 
     public TextMeshProUGUI timerText;
 
-    public TextMeshProUGUI VaseCounterText;
+    public TextMeshProUGUI vaseCounterText;
 
-    RatController rC;
+    RatController ratController;
 
     private float currentTime; 
     private void Start()
     {
         currentTime = countdownTime;
-        rC = FindObjectOfType<RatController>();
+        ratController = FindObjectOfType<RatController>();
     }
 
     private void Update()
@@ -43,6 +43,7 @@ public class Timer : MonoBehaviour
 
         //Vase
        // VaseCounterText.text = rC.currentSpawnCount.ToString();
+        vaseCounterText.text = ratController.reverseSpawnCount.ToString();
     }
 }
 

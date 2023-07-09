@@ -8,6 +8,9 @@ public class BotController : MonoBehaviour
     public Transform target;
 
     private NavMeshAgent agent;
+    private bool isChasingMouse;
+    private float chaseTimer;
+
     private void Awake()
     {
         instance = this;
@@ -16,7 +19,8 @@ public class BotController : MonoBehaviour
     private void Start()
     {
         Transform newTrans = SpawnManager.instance.GetBotSpawnPoint();
-        transform.position = newTrans.position; transform.rotation = newTrans.rotation;
+        transform.position = newTrans.position;
+        transform.rotation = newTrans.rotation;
         agent = GetComponent<NavMeshAgent>();
         agent.SetDestination(target.position);
     }
@@ -24,14 +28,23 @@ public class BotController : MonoBehaviour
     private void Update()
     {
         UpdateDestination();
-        if(GameManager.instance.isGameRunning)
+        if (GameManager.instance.isGameRunning)
         {
-            if(agent.remainingDistance <= agent.stoppingDistance && !agent.pathPending)
-        {
-            GameManager.instance.IsBotAtFinish = true;
+            if (agent.remainingDistance <= agent.stoppingDistance && !agent.pathPending)
+            {
+                GameManager.instance.IsBotAtFinish = true;
+            }
+
+
+            if (isChasingMouse)
+            {
+                chaseTimer -= Time.deltaTime;
+                if (chaseTimer <= 0f)
+                {
+                    StopChasingMouse();
+                }
+            }
         }
-        }
-        
     }
 
     private void UpdateDestination()
@@ -63,11 +76,24 @@ public class BotController : MonoBehaviour
         if (NavMesh.SamplePosition(blockPosition, out hit, 5f, NavMesh.AllAreas))
         {
             agent.SetDestination(hit.position);
+            StartChasingMouse();
         }
         else
         {
             agent.SetDestination(target.position);
         }
     }
-}
 
+    private void StartChasingMouse()
+    {
+        isChasingMouse = true;
+        chaseTimer = 10f;
+    }
+
+    private void StopChasingMouse()
+    {
+        isChasingMouse = false;
+
+        // бот перестал преследовать крысу
+    }
+}

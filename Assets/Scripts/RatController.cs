@@ -1,26 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class RatController : MonoBehaviour
 {
    
     public Transform viewPoint;
+    
     public float mouseSensitivity = 25f;
     private float verticalRotStore;
     private Vector2 mouseInput;
     public bool invertLook;
+    
     public float moveSpeed = 5f, runSpeed = 8f;
     public float activateMoveSpeed;
     private Vector3 moveDir, movement;
     public CharacterController charCon;
+    
     private Camera cam;
+    
     public int maxSpawnCount = 3; 
     private int currentSpawnCount = -1; 
+    
     [SerializeField] GameObject spawnedObjectPrefab; 
     AudioSource audioSource;
+    
     public Transform finishObject; 
-    public Transform pointerObject; 
+    public Transform pointerObject;
    
     void Start()
     {
@@ -33,6 +40,7 @@ public class RatController : MonoBehaviour
     }
     void Update()
     {
+
         Rotation();
         Movement();
         CursorSettings();

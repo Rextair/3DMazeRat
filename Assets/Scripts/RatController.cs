@@ -21,7 +21,7 @@ public class RatController : MonoBehaviour
     private Camera cam;
     
     public int maxSpawnCount = 3; 
-    private int currentSpawnCount = -1; 
+    public int currentSpawnCount = -1; 
     public int reverseSpawnCount = 3;
     [SerializeField] GameObject spawnedObjectPrefab; 
     private AudioSource breakGlassSound;

@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 70360551539067135}
   - component: {fileID: 70360551539067134}
   - component: {fileID: 1159395968}
+  - component: {fileID: -2172733126957350537}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,6 +124,8 @@ MonoBehaviour:
   activateMoveSpeed: 0
   charCon: {fileID: 70360551539067135}
   maxSpawnCount: 3
+  currentSpawnCount: -1
+  reverseSpawnCount: 3
   spawnedObjectPrefab: {fileID: 7489453529573117393, guid: 0994cb9d0a00f4e429988c7af771643f, type: 3}
   finishObject: {fileID: 0}
   pointerObject: {fileID: 6686873720048077205}
@@ -222,6 +225,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &-2172733126957350537
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70360551539067133}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &70360552890731855
 GameObject:
   m_ObjectHideFlags: 0

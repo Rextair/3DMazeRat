@@ -27,8 +27,8 @@ public class RatController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         Cursor.lockState = CursorLockMode.Locked;
         cam = Camera.main;
-        Transform newTrans = SpawnManager.instance.GetRatSpawnPoint();
-        transform.position = newTrans.position; transform.rotation = newTrans.rotation;
+        // Transform newTrans = SpawnManager.instance.GetRatSpawnPoint();
+        // transform.position = newTrans.position; transform.rotation = newTrans.rotation;
         
     }
     void Update()

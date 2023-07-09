@@ -4,10 +4,19 @@ using UnityEngine;
 
 public class BonusController : MonoBehaviour
 {
-    public GameObject bonusPrefab;
+    RatController ratController;
     void Start()
     {
-        Transform bonusSpawnPoint = GetComponent<SpawnManager>().GetBonusSpawnPoint();
-        Instantiate(bonusPrefab, bonusSpawnPoint.position, bonusSpawnPoint.rotation);
+        ratController = FindObjectOfType<RatController>();
+        Transform bonusSpawnPoint = FindObjectOfType<SpawnManager>().GetBonusSpawnPoint();
+        transform.position = bonusSpawnPoint.position; transform.rotation = bonusSpawnPoint.rotation;
+    }
+    private void OnTriggerEnter(Collider target) {
+        if(target.gameObject.CompareTag("Player"))
+        {
+            ratController.currentSpawnCount--; ratController.reverseSpawnCount++;
+            // pick up sound
+            Destroy(gameObject);
+        }
     }
 }

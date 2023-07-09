@@ -10,6 +10,7 @@ public class MenuScript : MonoBehaviour
     public GameObject MainMenuGameObject;
     public GameObject StartMenuGameObject;
     public GameObject SettingsMenuGameObject;
+    public GameObject ManualGameObject;
 
     public Object LoadLevel1;
     public Object LoadLevel2;
@@ -45,6 +46,11 @@ public class MenuScript : MonoBehaviour
         {
             ShowSettingsMenu();
         }
+
+        else if (MenuNumber == 3)
+        {
+            ShowManualMenu();
+        }
     }
 
     //Show menu widgets
@@ -68,6 +74,14 @@ public class MenuScript : MonoBehaviour
         MainMenuGameObject.SetActive(false);
         StartMenuGameObject.SetActive(false);
         SettingsMenuGameObject.SetActive(true);
+    }
+
+    public void ShowManualMenu()
+    {
+        MainMenuGameObject.SetActive(false);
+        StartMenuGameObject.SetActive(false);
+        ManualGameObject.SetActive(true);
+        SettingsMenuGameObject.SetActive(false);
     }
 
     // On button clicks
@@ -111,7 +125,7 @@ public class MenuScript : MonoBehaviour
 
     public void ButtonLevel1()
     {
-        if (MenuNumber == 1)
+        if (MenuNumber == 0)
         {
             SceneManager.LoadScene(LoadLevel1.name);
             AudioClick.Play();

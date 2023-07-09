@@ -5,7 +5,7 @@ using UnityEngine.AI;
 public class BotController : MonoBehaviour
 {
     public static BotController instance;
-    public Transform target;
+    public GameObject target;
 
     private NavMeshAgent agent;
     private bool isChasingMouse;
@@ -21,8 +21,9 @@ public class BotController : MonoBehaviour
         Transform newTrans = SpawnManager.instance.GetBotSpawnPoint();
         transform.position = newTrans.position;
         transform.rotation = newTrans.rotation;
+        target = GameObject.FindGameObjectWithTag("Fridge");
         agent = GetComponent<NavMeshAgent>();
-        agent.SetDestination(target.position);
+        agent.SetDestination(target.transform.position);
     }
 
     private void Update()
@@ -53,7 +54,7 @@ public class BotController : MonoBehaviour
 
         if (mice.Length == 0)
         {
-            agent.SetDestination(target.position);
+            agent.SetDestination(target.transform.position);
             return;
         }
 
@@ -80,7 +81,7 @@ public class BotController : MonoBehaviour
         }
         else
         {
-            agent.SetDestination(target.position);
+            agent.SetDestination(target.transform.position);
         }
     }
 
@@ -94,6 +95,6 @@ public class BotController : MonoBehaviour
     {
         isChasingMouse = false;
 
-        // бот перестал преследовать крысу
+        // пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
     }
 }

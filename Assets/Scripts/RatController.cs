@@ -18,7 +18,7 @@ public class RatController : MonoBehaviour
     public int maxSpawnCount = 3; 
     private int currentSpawnCount = -1; 
     [SerializeField] GameObject spawnedObjectPrefab; 
-    [SerializeField] AudioSource audioSource;
+    AudioSource audioSource;
     public Transform finishObject; 
     public Transform pointerObject; 
    

@@ -45,7 +45,7 @@ public class RatController : MonoBehaviour
         Movement();
         CursorSettings();
         ObjectSpawning();
-        Vector3 direction = finishObject.transform.position - pointerObject.position;
+        Vector3 direction = finishObject.transform.position - transform.position;
         pointerObject.rotation = Quaternion.LookRotation(direction);
     }
     void LateUpdate()

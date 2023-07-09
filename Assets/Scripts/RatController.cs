@@ -24,16 +24,16 @@ public class RatController : MonoBehaviour
     private int currentSpawnCount = -1; 
     
     [SerializeField] GameObject spawnedObjectPrefab; 
-    AudioSource audioSource;
+    private AudioSource breakGlassSound;
     public GameObject finishObject; 
     public Transform pointerObject; 
    
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
         Cursor.lockState = CursorLockMode.Locked;
         cam = Camera.main;
         finishObject = GameObject.FindGameObjectWithTag("Fridge");
+        breakGlassSound = GetComponent<AudioSource>();
         // Transform newTrans = SpawnManager.instance.GetRatSpawnPoint();
         // transform.position = newTrans.position; transform.rotation = newTrans.rotation;
         
@@ -124,7 +124,7 @@ public class RatController : MonoBehaviour
 
     private void SpawnObject()
     {
-        audioSource.Play();
+        breakGlassSound.Play();
         GameObject spawnedObject = Instantiate(spawnedObjectPrefab, transform.position, Quaternion.identity);
         Destroy(spawnedObject, 10f); 
     }

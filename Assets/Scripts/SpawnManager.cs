@@ -33,7 +33,7 @@ public class SpawnManager : MonoBehaviour
     }
     public Vector3 GetRatSpawnPoint(Vector3 fridgePosition)
 {
-    Vector3 spawnOffset = new Vector3(0f, 0f, -2f); 
+    Vector3 spawnOffset = new Vector3(0, -.571f, -2f); 
 
     Vector3 spawnPoint = fridgePosition + spawnOffset;
     Quaternion spawnRotation = Quaternion.identity; 

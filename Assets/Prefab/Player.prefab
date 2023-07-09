@@ -124,7 +124,7 @@ MonoBehaviour:
   charCon: {fileID: 70360551539067135}
   maxSpawnCount: 3
   spawnedObjectPrefab: {fileID: 7489453529573117393, guid: 0994cb9d0a00f4e429988c7af771643f, type: 3}
-  finishObject: {fileID: 8329752597900676313, guid: 919e8e05067562b45a9b9f6c1f500e6a, type: 3}
+  finishObject: {fileID: 0}
   pointerObject: {fileID: 6686873720048077205}
 --- !u!82 &1159395968
 AudioSource:

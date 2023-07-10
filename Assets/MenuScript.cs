@@ -126,9 +126,9 @@ public class MenuScript : MonoBehaviour
 
     public void ButtonLevel1()
     {
-        if (MenuNumber == 0)
+        if (MenuNumber == 3)
         {
-            SceneManager.LoadScene(LoadLevel1.name);
+            SceneManager.LoadScene("level1");
             AudioClick.Play();
         }
     }

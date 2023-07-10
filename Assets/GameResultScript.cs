@@ -24,13 +24,13 @@ public class GameResultScript : MonoBehaviour
 
     public void OnRetry()
     {
-        SceneManager.LoadScene(RetryScene.name);
+        SceneManager.LoadScene("Level1");
         Time.timeScale = 1f;
     }
 
     public void OnMenu()
     {
-        SceneManager.LoadScene(MainMenuScene.name);
+        SceneManager.LoadScene("MainMenu");
         Time.timeScale = 1f;
     }
 

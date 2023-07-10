@@ -10,8 +10,8 @@ public class SettingScript : MonoBehaviour
     public TMP_Dropdown FullscreenDropdown;
     public Slider VolumeValue;
     public Slider SensetivityValue;
-
     
+
 
     public AudioMixer audioMixer;
     // Start is called before the first frame update
@@ -54,7 +54,7 @@ public class SettingScript : MonoBehaviour
 
     public void SetSensevity(float sense)
     {
-        //rC.sensetivity = sense;
+        //rC.sensetivity = sense.value;
     }
 
     public void saveSettings()
